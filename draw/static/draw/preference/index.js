@@ -58,7 +58,7 @@ $(document).ready(function(){
       console.log("This is special" + msg); //prints message when receive
       var obj = JSON.parse(msg);
       console.log(obj);
-//       path.add(obj);
+      path.add(obj);
     }
   
     
