@@ -6,3 +6,13 @@
   border: dotted black;
   
 }
+
+.memo {
+  width: 90vw;
+  height: 10vh;
+  background-color: skyblue;
+  display: block;
+  margin-top: 5vh;
+  margin-left: 5vw;
+  
+}

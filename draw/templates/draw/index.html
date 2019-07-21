@@ -9,13 +9,17 @@
     <link rel="stylesheet" type="text/css" href="{% static 'draw/vendor/bootstrap/css/bootstrap.min.css' %}">
     <script type="text/javascript" src="{% static 'draw/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'draw/vendor/paper/paper-full.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'draw/preference/index.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'draw/preference/index.css' %}">
-
 
 </head>
 <body>
     <!-- You may change the dimensions of this canvas -->
     <canvas id="myCanvas"></canvas>
+    <div class="memo">
+      
+    </div>
 </body>
+    <script type="text/javascript" src="{% static 'draw/preference/functions.js' %}"></script>
+    <script type="text/javascript" src="{% static 'draw/preference/index.js' %}"></script>
+    <script type="text/javascript" src="{% static 'draw/preference/receive.js' %}"></script>
 </html>

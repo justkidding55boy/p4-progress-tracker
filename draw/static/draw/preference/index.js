@@ -1,27 +1,12 @@
-$(document).ready(function(){
 
-    
-
-    // getting the URL (you may want to use for Exercise 3)
-    var url = window.location.href;
-
-    var socket = new WebSocket(
-        'wss://p3-websockets-justkidding55boy-eijikudo883404.codeanyapp.com/ws/draw');
-    
-    // notify console if socket closes unexpectedly
-    socket.onclose = function(e) {
-      console.error('Chat socket closed unexpectedly');
-    };
-  
-      // setting up the canvas and one paper tool
-    var canvas = document.getElementById('myCanvas');
-    paper.setup(canvas);
     var tool = new paper.Tool();
+    var path;
+    var colors = ['red', 'blue', 'pink', 'purple', 'orange', 'green',
+                  'skyblue', 'navy', 'lime', 'aqua', 'fuchsia', 'olive'
+                 , 'maroon'];
 
-  
-//   tool.onMouseMove = function(event) {
-//     path.position = event.point;
-     var path;
+    var user_history = [];
+    var user_id = Math.floor(Math.random() * colors.length);
   
      tool.onMouseDown = function(event) {
           if (path) {
@@ -30,36 +15,46 @@ $(document).ready(function(){
 
           path = new paper.Path({
             segments: [event.point],
-            strokeColor: 'black',
+//             strokeColor: 'blue',
             fullySelected: true
           });
+       
+       path.strokeColor = colors[user_id];
+       
         }
-
-
+     
       tool.onMouseDrag = function(event) {
         path.add(event.point);
+                var segment_list = [];
+        for (var i = 0; i < path.segments.length; i++) {
+          segment_list.push(path.segments[i].point.x);
+          segment_list.push(path.segments[i].point.y);
+          segment_list.push(user_id);
+        }
+        
+//         console.log(segment_list);
+        
+         socket.send(segment_list);
       }
 
       tool.onMouseUp = function(event) {
         path.fullySelected = true;
         //send the path as json to the server
-        var json = JSON.stringify(path.segments);
-      
-        socket.send(json);
+//         var segment_list = [];
+//         for (var i = 0; i < path.segments.length; i++) {
+//           segment_list.push(path.segments[i].point.x);
+//           segment_list.push(path.segments[i].point.y);
+//           segment_list.push(user_id);
+//         }
+        
+// //         console.log(segment_list);
+        
+//          socket.send(segment_list);
       }
       
   
-//       setTimeout(function() {
-//       socket.send('I am Eiji');
-//     }
-//       , 1000);
-  
-    socket.onmessage = function(msg) {
-      console.log("This is special" + msg); //prints message when receive
-      var obj = JSON.parse(msg);
-      console.log(obj);
-      path.add(obj);
-    }
+    
+    
+
   
     
-});
