@@ -30,6 +30,8 @@ var user_color;
   //////////
   socket.onmessage = function(msg) {
     
+      console.log(msg);
+    
       
       var segmentList = msg.data.split(",");
       
@@ -47,7 +49,6 @@ var user_color;
        
         
        if (url_small) {
-         console.log("This is small");
           return 
        }
         

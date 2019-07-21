@@ -18,6 +18,8 @@
     }
     
     getColor();
+
+    var paths = [];
   
      tool.onMouseDown = function(event) {
           if (path) {
@@ -26,9 +28,12 @@
 
           path = new paper.Path({
             segments: [event.point],
+            strokeWidth: 10,
 //             strokeColor: 'blue',
             fullySelected: true
           });
+       
+       paths.push(path);
        
        path.strokeColor = colors[user_id];
        
@@ -62,6 +67,48 @@
         
 //          socket.send(segment_list);
       }
+      
+      var erasePath = function() {
+        
+          for (var i = 0; i < paths.length; i++) {
+          paths[i].removeSegments();
+//           paths[i].opacity = '0';
+          console.log(i);
+//           console.log(paths[i]);
+        }
+        
+      }
+      
+      $('.erase-btn').click(function() {
+        console.log("clicked");
+//         console.log(path.segments);
+//         path.opacity('0');
+//         console.log(paths.length);
+        erasePath();
+        
+      });
+
+   window.addEventListener('devicemotion', function(event) {
+//      console.log(event.acceleration.x + ' m/s2');
+//      socket.send(event.acceleration.x);
+     
+     var acc = Math.abs(event.acceleration.x) + Math.abs(event.acceleration.y);
+     
+     if (acc > 20)  {
+       socket.send('above 10');
+        erasePath();
+     }
+     
+   });
+
+		window.addEventListener('deviceorientation', (event) => {
+//       socket.send(event.beta);
+      console.log(event.gamma);
+      if (event.gamma > 30) {
+        getColor();
+      }
+		});
+  
       
 
   
