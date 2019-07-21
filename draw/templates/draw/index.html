@@ -14,12 +14,18 @@
 </head>
 <body>
     <!-- You may change the dimensions of this canvas -->
+    <div class="display_size" style="text-align: center"></div>
     <canvas id="myCanvas"></canvas>
-    <div class="memo">
+<!--     <div class="memo">
       
-    </div>
+    </div> -->
 </body>
+    <script>
+    var user_history = [];
+    var user_id;
+    </script>
     <script type="text/javascript" src="{% static 'draw/preference/functions.js' %}"></script>
     <script type="text/javascript" src="{% static 'draw/preference/index.js' %}"></script>
     <script type="text/javascript" src="{% static 'draw/preference/receive.js' %}"></script>
+    <script type="text/javascript" src="{% static 'draw/preference/receive_small.js' %}"></script>
 </html>
