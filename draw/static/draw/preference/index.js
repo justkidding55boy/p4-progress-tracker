@@ -1,27 +1,68 @@
 
-    var tool = new paper.Tool();
-    var path;
-    var colors = ['red', 'blue', 'pink', 'purple', 'orange', 'green',
-                  'skyblue', 'navy', 'lime', 'aqua', 'fuchsia', 'olive'
-                 , 'maroon'];
 
-    var getColor = function() {
-      var i = 0;
-      do {
+  
+      // setting up the canvas and one paper tool
+    var canvas = document.getElementById('myCanvas');
+//     var cvs = document.getElementById('myCanvasForImage');
+    var ctx = canvas.getContext("2d");
 
-        user_id = Math.floor(Math.random() * colors.length);
-        console.log(i);
-        i++;
-        //user_historyに見つけられなくなるまで続ける
-        //user_historyになかったら終わり
-      } while( i<20 || user_history.indexOf(user_id) !== -1);
+    paper.setup(canvas);
+
+
+
+  function handleFileSelect(evt) {
+    var files = evt.target.files; // FileList object
+    var img;
+    var img_url;
+
+    // Loop through the FileList and render image files as thumbnails.
+    for (var i = 0, f; f = files[i]; i++) {
+
+      // Only process image files.
+      if (!f.type.match('image.*')) {
+        continue;
+      }
+
+      var reader = new FileReader();
+
+      // Closure to capture the file information.
+      reader.onload = (function(theFile) {
+        return function(e) {
+          // Render thumbnail.
+          var span = document.createElement('span');
+          span.innerHTML = ['<img class="thumb" src="', e.target.result,
+                            '" title="', escape(theFile.name), '"/>'].join('');
+          document.getElementById('list').insertBefore(span, null);
+          console.log(e.target.result);
+          img_url = e.target.result;
+          img = new Image();
+          img.src = img_url;
+          console.log(img_url);
+          img.onload = function(){
+            ctx.drawImage(img, 0, 0);
+          }
+          
+        };
+      })(f);
+      
+      // Read in the image file as a data URL.
+      reader.readAsDataURL(f);
     }
     
-    getColor();
+  }
+
+  document.getElementById('files').addEventListener('change', handleFileSelect, false);
+
+
+  var tool = new paper.Tool();
+    var path;
 
     var paths = [];
+
   
      tool.onMouseDown = function(event) {
+       
+
           if (path) {
             path.selected = false;
           }
@@ -35,37 +76,17 @@
        
        paths.push(path);
        
-       path.strokeColor = colors[user_id];
+       path.strokeColor = 'red';
        
         }
      
       tool.onMouseDrag = function(event) {
         path.add(event.point);
-        var segment_list = [];
-        for (var i = 0; i < path.segments.length; i++) {
-          segment_list.push(path.segments[i].point.x);
-          segment_list.push(path.segments[i].point.y);
-          segment_list.push(user_id);
-        }
-        
-//         console.log(segment_list);
-        
-         socket.send(segment_list);
+
       }
 
       tool.onMouseUp = function(event) {
         path.fullySelected = true;
-        //send the path as json to the server
-//         var segment_list = [];
-//         for (var i = 0; i < path.segments.length; i++) {
-//           segment_list.push(path.segments[i].point.x);
-//           segment_list.push(path.segments[i].point.y);
-//           segment_list.push(user_id);
-//         }
-        
-// //         console.log(segment_list);
-        
-//          socket.send(segment_list);
       }
       
       var erasePath = function() {
@@ -73,47 +94,25 @@
           for (var i = 0; i < paths.length; i++) {
           paths[i].removeSegments();
 //           paths[i].opacity = '0';
-          console.log(i);
+          console.log(paths[i]);
 //           console.log(paths[i]);
         }
         
       }
       
       $('.erase-btn').click(function() {
-        console.log("clicked");
-//         console.log(path.segments);
-//         path.opacity('0');
-//         console.log(paths.length);
+        console.log("erase");
+
         erasePath();
         
       });
 
-   window.addEventListener('devicemotion', function(event) {
-//      console.log(event.acceleration.x + ' m/s2');
-//      socket.send(event.acceleration.x);
-     
-     var acc = Math.abs(event.acceleration.x) + Math.abs(event.acceleration.y);
-     
-     if (acc > 20)  {
-       socket.send('above 10');
-        erasePath();
-     }
-     
-   });
+      $('.undo-btn').click(function(){
+        console.log('undo');
+        paths[paths.length-1].removeSegments();
+      });
 
-		window.addEventListener('deviceorientation', (event) => {
-//       socket.send(event.beta);
-      console.log(event.gamma);
-      if (event.gamma > 30) {
-        getColor();
-      }
-		});
-  
-      
+    $('.upload-btn').click(function(){
+      $('.upload-tool').css('display', 'block');
+    });
 
-  
-    
-    
-
-  
-    

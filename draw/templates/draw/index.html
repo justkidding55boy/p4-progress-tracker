@@ -15,20 +15,41 @@
 <body>
     <!-- You may change the dimensions of this canvas -->
     <div class="display_size" style="text-align: center; font-size: 5vw;"></div>
-    <div class = "btn btn-primary erase-btn">
-      erase
-  </div>
-    <canvas id="myCanvas"></canvas>
-<!--     <div class="memo">
-      
-    </div> -->
+    <div class = "btn btn-primary tool-btn undo-btn">
+      undo
+    </div>
+    <div class = "btn btn-primary tool-btn redo-btn">
+      redo
+    </div>
+    <div class = "btn btn-primary tool-btn erase-btn">
+      erase all
+    </div>
+    <div class = "btn btn-primary tool-btn upload-btn">
+      upload
+    </div>
+    <div class="upload-tool">
+      <input type="file" class = "file-selection"/>
+      <div class="btn btn-primary too-btn send-btn">
+       send 
+      </div>
+    </div>
+  
+  <style>
+  .thumb {
+    height: 75px;
+    border: 1px solid #000;
+    margin: 10px 5px 0 0;
+  }
+</style>
+
+<input type="file" id="files"/>
+<output id="list"></output>
+
+  <canvas id="myCanvas"></canvas>
+
+
+
 </body>
-    <script>
-    var user_history = [];
-    var user_id;
-    </script>
-    <script type="text/javascript" src="{% static 'draw/preference/functions.js' %}"></script>
     <script type="text/javascript" src="{% static 'draw/preference/index.js' %}"></script>
     <script type="text/javascript" src="{% static 'draw/preference/receive.js' %}"></script>
-    <script type="text/javascript" src="{% static 'draw/preference/receive_small.js' %}"></script>
 </html>

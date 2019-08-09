@@ -4,16 +4,17 @@
   width: 90vw;
   height: 80vh;
   border: dotted black;
+/*   margin: 0;
+  background-color: yellow; */
 }
 
-/* .memo {
-  width: 90vw;
-  height: 10vh;
-  background-color: skyblue;
-  display: none;
-  margin-top: 5vh;
+/* #myCanvasForImage {
   margin-left: 5vw;
-  
+  margin-top: 5vh;
+  width: 90vw;
+  height: 80vh;
+  border: dotted black;
+/*   opacity: 0.5; */
 } */
 
 .display_size {
@@ -24,12 +25,17 @@
   display: block;
 }
 
-.erase-btn {
+.tool-btn {
   margin: 0 auto;
   text-align: center;
-  width: 30vw;
+  width: 15vw;
   height: 10vh;
-  font-size: 5vw;
+  font-size: 3vw;
   float: right;
   margin-right: 5vw;
 }
+
+.upload-tool {
+  display: none;
+}
+

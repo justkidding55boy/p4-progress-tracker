@@ -25,13 +25,13 @@ SECRET_KEY = '*6t50m_p^gif@4sz!590)u_!#9c-u8l9+7-v+*_op=v^#7wkv9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["p3-websockets-justkidding55boy-eijikudo883404.codeanyapp.com"]
+ALLOWED_HOSTS = ["p4-progress-tracker-eijikudo883404.codeanyapp.com"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'channels',
+#     'channels',
     'draw',
     'django.contrib.admin',
     'django.contrib.auth',
