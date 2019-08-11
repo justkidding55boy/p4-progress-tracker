@@ -55,7 +55,7 @@ function pen() {
 var erase = function(){
   pen_check = 0;
   path_check = 0;
-  
+  //test
 //   var _x;
 //   var _y;
 //   var paintstat = false;
