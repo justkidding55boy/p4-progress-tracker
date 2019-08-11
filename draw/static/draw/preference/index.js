@@ -1,118 +1,146 @@
+var canvas = document.getElementById('myCanvas');
+var cxt = canvas.getContext('2d');
+var pen_check = 1;
+var path_check = 0;
+var erase_check = 0;
+paper.setup(canvas);
 
+var draw = function(){
+  if (pen_check == 1) {
+    pen();
+  } else if (path_check == 1) {
+    path_c();
+  } else if (erase_check == 0) {
+    erase();
+  }
+}
 
-  
-      // setting up the canvas and one paper tool
-    var canvas = document.getElementById('myCanvas');
-//     var cvs = document.getElementById('myCanvasForImage');
-    var ctx = canvas.getContext("2d");
+function pen() {
+    var _x;
+    var _y;
+    var paintstat = false;
 
-    paper.setup(canvas);
-
-
-
-  function handleFileSelect(evt) {
-    var files = evt.target.files; // FileList object
-    var img;
-    var img_url;
-
-    // Loop through the FileList and render image files as thumbnails.
-    for (var i = 0, f; f = files[i]; i++) {
-
-      // Only process image files.
-      if (!f.type.match('image.*')) {
-        continue;
-      }
-
-      var reader = new FileReader();
-
-      // Closure to capture the file information.
-      reader.onload = (function(theFile) {
-        return function(e) {
-          // Render thumbnail.
-          var span = document.createElement('span');
-          span.innerHTML = ['<img class="thumb" src="', e.target.result,
-                            '" title="', escape(theFile.name), '"/>'].join('');
-          document.getElementById('list').insertBefore(span, null);
-          console.log(e.target.result);
-          img_url = e.target.result;
-          img = new Image();
-          img.src = img_url;
-          console.log(img_url);
-          img.onload = function(){
-            ctx.drawImage(img, 0, 0);
-          }
-          
-        };
-      })(f);
-      
-      // Read in the image file as a data URL.
-      reader.readAsDataURL(f);
+    var tool = new paper.Tool();
+    tool.onMouseDown = function(event) {
+      paintstat = true;
+      _x = event.point.x
+      _y = event.point.y;
     }
-    
+
+    tool.onMouseMove = function(event) {
+      if (paintstat) {
+        cxt.beginPath();
+        //cxt.setLineDash([5, 15]);
+        point = event.point;
+        cxt.strokeStyle = "#000000";
+        cxt.moveTo(_x, _y);
+        cxt.lineTo(point.x, point.y);
+        cxt.lineWidth = 2;
+        cxt.stroke();
+        _x = point.x;
+        _y = point.y;
+      }
+    }
+
+    tool.onMouseUp = function(event) {
+      paintstat = false;
+    }
+
+}
+
+/*function eraser_c(){
+  
+}*/
+
+var erase = function(){
+  pen_check = 0;
+  path_check = 0;
+  
+//   var _x;
+//   var _y;
+//   var paintstat = false;
+//   var tool = new paper.Tool();
+//   tool.onMouseDown = function(event) {
+//     paintstat = true;
+//     _x = event.point.x;
+//     _y = event.point.y;
+//     cxt.save();
+    cxt.globalCompositeOperation = 'destination-out';
+//     cxt.strokeStyle = "red";
+//     cxt.moveTo(_x, _y);
+//     cxt.lineTo(_x, _y);
+//     cxt.lineWidth = 2;
+//     cxt.stroke();
+//   }
+  
+//   tool.onMouseDrag = function(event) {
+//     paintstat = true;
+//     _x = event.point.x;
+//     _y = event.point.y;
+//     cxt.save();
+//     cxt.globalCompositeOperation = 'destination-out';
+//     cxt.strokeStyle = "red";
+//     cxt.moveTo(_x, _y);
+//     cxt.lineTo(_x, _y);
+//     cxt.lineWidth = 2;
+//     cxt.stroke();
+//   }
+}
+
+function clear_c() {
+  cxt.clearRect(0, 0, canvas.width, canvas.height);
+  cxt.beginPath();
+  pen_check = 0;
+  path_check = 0;
+}
+
+
+function path_c() {
+  var _x;
+  var _y;
+  var paintstat = false;
+  var tool = new paper.Tool();
+  tool.onMouseDown = function(event) {
+    paintstat = true;
+    _x = event.point.x
+    _y = event.point.y;
   }
 
-  document.getElementById('files').addEventListener('change', handleFileSelect, false);
+  tool.onMouseMove = function(event) {
+    if (paintstat) {
+      cxt.beginPath();
+      cxt.setLineDash([5, 15]);
+      point = event.point;
+      cxt.strokeStyle = "#000000";
+      cxt.moveTo(_x, _y);
+      cxt.lineTo(point.x, point.y);
+      cxt.lineWidth = 2;
+      cxt.stroke();
+      _x = point.x;
+      _y = point.y;
+    }
+  }
 
+  tool.onMouseUp = function(event) {
+    paintstat = false;
+  }
+}
 
-  var tool = new paper.Tool();
-    var path;
+$('#pen').click(function(){
+  pen_check = 1;
+  path_check = 0;
+  cxt.globalCompositeOperation = 'source-over';
+  draw();
+});
 
-    var paths = [];
+$('#path').click(function(){
+  pen_check = 1;
+  path_check = 0;
+  draw();
+});
 
-  
-     tool.onMouseDown = function(event) {
-       
-
-          if (path) {
-            path.selected = false;
-          }
-
-          path = new paper.Path({
-            segments: [event.point],
-            strokeWidth: 10,
-//             strokeColor: 'blue',
-            fullySelected: true
-          });
-       
-       paths.push(path);
-       
-       path.strokeColor = 'red';
-       
-        }
-     
-      tool.onMouseDrag = function(event) {
-        path.add(event.point);
-
-      }
-
-      tool.onMouseUp = function(event) {
-        path.fullySelected = true;
-      }
-      
-      var erasePath = function() {
-        
-          for (var i = 0; i < paths.length; i++) {
-          paths[i].removeSegments();
-//           paths[i].opacity = '0';
-          console.log(paths[i]);
-//           console.log(paths[i]);
-        }
-        
-      }
-      
-      $('.erase-btn').click(function() {
-        console.log("erase");
-
-        erasePath();
-        
-      });
-
-      $('.undo-btn').click(function(){
-        console.log('undo');
-        paths[paths.length-1].removeSegments();
-      });
-
-    $('.upload-btn').click(function(){
-      $('.upload-tool').css('display', 'block');
-    });
-
+$('#erase').click(function(){
+  pen_check = 0;
+  path_check = 0;
+  cxt.globalCompositeOperation = "destination-out"
+});
