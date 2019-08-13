@@ -1,4 +1,5 @@
- .app-name {
+body {background-color:#121212;} 
+.app-name {
     position: absolute;
     width: 300px;
     height: 45px;
@@ -12,77 +13,97 @@
 
 #myCanvas {
     position: absolute;
-    width: 800px;
-    height: 300px;
-    left: 80px;
-    top: 64.31px;
+    width: 900px;
+    height: 400px;
+    left: 40px;
+    top: 50px;
+  background-color: #FFFFFF;
 }
 
 .submit {
     position: absolute;
-    width: 110px;
-    height: 30px;
-    left: 780.31px;
-    top: 19.31px;
+    width: 150px;
+    height: 40px;
+    left: 810px;
+    top: 10px;
+  font-size: 20px;
+  font-family: 'Lexend Deca', sans-serif;
+  color: #FFFFFF
 }
 
-.icon {
-    width: 50px;
-    height: 50px;
-}
 
-.pen-icon {
+
+#undo {
     position: absolute;
-    left: 75px;
-    top: 375px;
-    border: solid;
+    left: 60px;
+    top: 480px;
+    color: #B5D3E7;
 }
 
-.eraser-icon {
+
+#clear {
     position: absolute;
-    left: 175.31px;
-    top: 375px;
-    border: solid;
+    left: 380px;
+    top: 480px;
+      color: #B5D3E7;
+
 }
 
-.clear-icon {
+#pen {
     position: absolute;
-    left: 275px;
-    top: 375px;
-    border: solid;
+    left: 140px;
+    top: 480px;
+      color: #B5D3E7;
+
 }
 
-.undo-icon {
-    position: absolute;
-    left: 375px;
-    top: 375px;
-    border: solid;
-}
-
-.redo-icon {
+/* .redo-icon {
     position: absolute;
     left: 475px;
     top: 375px;
     border: solid;
 }
-
-.blurry-icon {
+ */
+#highlight {
     position: absolute;
-    left: 575px;
-    top: 375px;
-    border: solid;
+    left: 220px;
+    top: 480px;    
+    color: #B5D3E7;
 }
 
-.path-icon {
+#path {
     position: absolute;
-    left: 675px;
-    top: 375px;
-    border: solid;
+    left: 300px;
+    top: 480px;
+    color: #B5D3E7;
+
 }
 
-.audio-icon {
+#audio-file  {
+  position: absolute;
+  left: 800px;
+  top: 480px;
+  color: #B5D3E7;
+  display: none;
+}
+
+#recordingsList {
+  position: absolute;
+  left: 500px;
+  top: 480px;
+}
+
+#audio {
     position: absolute;
-    left: 775px;
-    top: 375px;
-    border: solid;
+    left: 890px;
+    top: 480px;
+    color: #B5D3E7;
+}
+
+#stop {
+    position: absolute;
+    left: 890px;
+    top: 480px;
+    color: #B5D3E7;
+  display: none;
 }

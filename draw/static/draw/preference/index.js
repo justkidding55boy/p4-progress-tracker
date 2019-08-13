@@ -8,36 +8,6 @@ var paths_blur = [];
 var paths_redo = [];
 var action_history = [];
 
-// var my_history = {
-//   redo_list: [],
-//   undo_list: [],
-//   saveState: function(canvas, list, keep_redo) {
-//     keep_redo = keep_redo || false;
-//     if(!keep_redo) {
-//       this.redo_list = [];
-//     }
-//     (list || this.undo_list).push(canvas.toDataURL());
-//   },
-//  undo: function(canvas, cxt) {
-//    this.restoreState(canvas, cxt, this.undo_list, this.redo_list);
-//  },
-//   redo: function(canvas, cxt) {
-//     this.restoreState(canvas, cxt, this.redo_list, this.undo_list);
-//   },
-//   restoreState: function(canvas, cxt, pop, push) {
-//     if (pop.length) {
-//       this.saveState(canvas, push, true);
-//       var restore_state = pop.pop();
-//       var img = new Element( 'img', {'src': restore_state});
-//       img.onload = function() {
-//         cxt.clearRect(0, 0, 725, 245);
-//         cxt.drawImage(img, 0, 0);
-//       }
-//     }
-//   }
-
-// }
-
 var draw = function() {
   
   var tool = new paper.Tool();
@@ -53,6 +23,7 @@ var draw = function() {
     
     if (cond =="path") {
       //path
+      
       console.log("path function");
 
       myPath = new paper.Path({
@@ -163,6 +134,13 @@ function clear_c() {
   for (var i = 0; i < paths_blur.length; i++) {
     paths_blur[i].remove();
   }
+  
+  document.getElementById("clear").style.color="#ffff88";
+  document.getElementById("pen").style.color="#B5D3E7";
+  document.getElementById("highlight").style.color="#B5D3E7";
+  document.getElementById("path").style.color="#B5D3E7";
+  document.getElementById("undo").style.color="#B5D3E7";
+  document.getElementById("audio").style.color="#B5D3E7";
 }
 
 $('#pen').click(function() {
@@ -172,6 +150,13 @@ $('#pen').click(function() {
   cxt.globalCompositeOperation = 'source-over';
   cxt.lineWidth = 2;
   draw();
+ document.getElementById("pen").style.color="#ffff88";
+  document.getElementById("path").style.color="#B5D3E7";
+  document.getElementById("highlight").style.color="#B5D3E7";
+  document.getElementById("clear").style.color="#B5D3E7";
+  document.getElementById("undo").style.color="#B5D3E7";
+  document.getElementById("audio").style.color="#B5D3E7";
+ 
 
 });
 
@@ -180,16 +165,23 @@ $('#path').click(function() {
   cond = "path";
   cxt.globalCompositeOperation = 'source-over';
   draw();
+  
+  document.getElementById("path").style.color="#ffff88";
+  document.getElementById("pen").style.color="#B5D3E7";
+  document.getElementById("highlight").style.color="#B5D3E7";
+  document.getElementById("clear").style.color="#B5D3E7";
+  document.getElementById("undo").style.color="#B5D3E7";
+  document.getElementById("audio").style.color="#B5D3E7";
 });
 
-$('#erase').click(function() {
-  cond = "erase";
-  cxt.lineWidth = 30;
-  cxt.globalCompositeOperation = "destination-out";
-  draw();
-});
+// $('#erase').click(function() {
+//   cond = "erase";
+//   cxt.lineWidth = 30;
+//   cxt.globalCompositeOperation = "destination-out";
+//   draw();
+// });
 
-$('.undo-icon').click(function() {
+$('#undo').click(function() {
 
   console.log(paths_blur);
 //   target.remove();
@@ -207,7 +199,12 @@ $('.undo-icon').click(function() {
     paths.pop();
     console.log("length" + paths.length);
   }
-  
+  document.getElementById("undo").style.color="#ffff88";
+  document.getElementById("pen").style.color="#B5D3E7";
+  document.getElementById("highlight").style.color="#B5D3E7";
+  document.getElementById("clear").style.color="#B5D3E7";
+  document.getElementById("path").style.color="#B5D3E7";
+  document.getElementById("audio").style.color="#B5D3E7";
 });
 
 $('.redo-icon').click(function() {
@@ -224,8 +221,23 @@ $('.redo-icon').click(function() {
 
 });
 
-$('.blurry-icon').click(function(){
+$('#audio').click(function(){
+    $('#audio').css("display", "none");
+    $('#stop').css("display", "block");
+});
+
+$('#stop').click(function(){
+   $('#stop').css("display", "none");
+});
+
+$('#highlight').click(function(){
   console.log("blurry clicked");
   cond = "blurry";
   draw();
+  document.getElementById("highlight").style.color="#ffff88";
+  document.getElementById("pen").style.color="#B5D3E7";
+  document.getElementById("path").style.color="#B5D3E7";
+  document.getElementById("clear").style.color="#B5D3E7";
+  document.getElementById("undo").style.color="#B5D3E7";
+  document.getElementById("audio").style.color="#B5D3E7";
 });

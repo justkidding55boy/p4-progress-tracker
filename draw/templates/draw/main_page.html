@@ -4,21 +4,145 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>P4 main_page</title>
+    <title>main_page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'draw/preference/main_page.css' %}">
+    <script type="text/javascript" src="{% static 'draw/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'draw/vendor/paper/paper-full.min.js' %}"></script>
+  
   
 </head>
 
 <body>
     <!-- You may change the dimensions of this canvas -->
     <div class="display_size" style="text-align: center; font-size: 5vw;"></div>
-  <form class="search-container">
-    <input type="text" id="search-bar" placeholder="">
-    <a href="#"><img class="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
-  </form>
+    
+<!--   class mainpage set the vertical layout -->
+  <div class="vertical_box">
+    
+<!--     search bar  -->
+          <div class="search_bar">
+            <div class="search" style="box-shadow: 5px 5px 5px #333">
+      <input type="text" class="searchTerm" placeholder="Search Here" >
+<!--       <button type="submit" class="searchButton"> -->
+        <i class="fa fa-search"></i>
+     </button>
+   </div>
+ </div>
+    
+    
+          <div class ="first_row">
+            
+            <div class="r1c1">
+              
+            <img class= "basketballplay" src = "{% static 'draw/preference/assets/basketballplay.png'%}">
+            </div>
+            <div class="r1c2">
+            <p>
+              Chris
+              <br>
+              Description
+              <br>
+              ___________
+              </p>
+            </div>
+          </div>
+          
+    
+    
+    
+    <div class ="second_row">
+      <div class="r2c1">
+              
+            <img class= "smallvideotag" src = "{% static 'draw/preference/assets/smallvideotag.png'%}">
+            </div>
+            <div class="r2c2">
+            <p>
+              Eiji
+              <br>
+              Description
+              <br>
+              ___________
+              </p>
+            </div>
+    </div>
+          <div class ="third_row">
+            <div class="r3c1">
+              
+            <img class= "smallvideotag" src = "{% static 'draw/preference/assets/smallvideotag.png'%}">
+            </div>
+            <div class="r3c2">
+            <p>
+              YJ
+              <br>
+              Description
+              <br>
+              ___________
+              </p>
+            </div>
+    </div>
   
- 
+    <div id = "External" class ="fourth_row" style = "visibility:hidden">
+      <div class="r4r1">
+        <div class="r4r1c1">
+          Take Photo or Video
+        </div>
+        <div class="r4r1c2">
+          <img class= "littlecamera" src = "{% static 'draw/preference/assets/littlecamera.svg'%}">
+        </div>
+      </div>
+      
+      <div class="r4r2">
+        <div class="r4r2c1">
+          Photo Library
+        </div>
+        <div class="r4r2c2">
+          <img class= "photolibrary" src = "{% static 'draw/preference/assets/photolibrary.svg'%}">
+        </div>
+      </div>
+      
+      <div class="r4r3">
+        <div class="r4r3c1">
+          Browse
+        </div>
+        <div class="r4r3c2">
+          <img class= "browse" src = "{% static 'draw/preference/assets/browse.svg'%}">
+        </div>
+      </div>           
+    </div>      
+  
+  
+  
+  
+  
+  
+    <div class ="bottom_row">
+            <div class="rlc1">
+              <a id = "Home"><img class= "Home_icon" src = "{% static 'draw/preference/assets/Home.svg'%}"></a>
+              </div>
+            <div class ="rlc2">
+              <a id = "Camera"><img class= "Camera_icon" src = "{% static 'draw/preference/assets/Camera.svg'%}"></a>
+            </div>
+            <div class ="rlc3">
+              <a id = "Personal"><img class= "Personal_icon" src = "{% static 'draw/preference/assets/Personal_icon.svg'%}"></a>
+    </div>
+        </div>
+      
+  
 </body>
-
+  <script>
+  var camera_check = 0;
+  $('#Camera').click(function(){
+  console.log("camera clicked");
+  if (camera_check == 0){
+    document.getElementById("External").style.visibility = "visible";
+    camera_check = 1;
+  }
+  else if (camera_check == 1){
+    document.getElementById("External").style.visibility = "hidden";
+    camera_check = 0;
+  }
+});
+  </script>
 
 </html>
 

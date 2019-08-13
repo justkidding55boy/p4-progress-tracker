@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>video_page</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'draw/vendor/bootstrap/css/bootstrap.min.css' %}">
+    <script type="text/javascript" src="{% static 'draw/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'draw/vendor/paper/paper-full.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'draw/preference/video_page.css' %}">
+  
+</head>
+
+<body>
+    <!-- You may change the dimensions of this canvas -->
+    <div class="display_size" style="text-align: center; font-size: 5vw;"></div>
+  
+<!--   <div class="upload-tool">
+    <input type="file" id="files" class = "file-selection"/>  
+    <div class="btn btn-primary too-btn send-btn">
+       send 
+    </div>
+  </div> -->
+  
+  <div class ="app-name">
+    <h1> Our app name</h1>
+  </div>
+  
+  <button type="button"  class = "submit" onclick="alert('Your submission is recorded')">Critique</button>
+  
+  <div class = "video">
+    
+  </div>
+  
+  <canvas id="myCanvas" height="382" width="974" style="border:3px solid #000000"></canvas>
+
+</body>
+
+    <script type="text/javascript" src="{% static 'draw/preference/index.js' %}"></script>
+<!--     <script type="text/javascript" src="{% static 'draw/preference/canvas.js' %}"></script> -->
+
+</html>
+
+

@@ -1,0 +1,163 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script type="text/javascript" src="{% static 'draw/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+    <title>Video_Submission_Page</title>
+    
+  
+  
+  <style>
+    body {
+      background: #ffffff;
+      font-family: helvetica;
+      margin: 50px;
+  }
+    .Personal_icon {
+      position: absolute;
+      left: 80%;
+      right: 8.9%;
+      top: 90%;
+      bottom: 1%;
+      height: 150px;
+      width: 150px;
+
+    }
+    .Camera_icon{
+      position: absolute;
+      left: 43%;
+      right: 8.9%;
+      top: 90%;
+      bottom: 1%;
+      height: 150px;
+      width: 150px;
+    }
+    .Home_icon{
+      position: absolute;
+      left: 8%;
+      right: 8.9%;
+      top: 90%;
+      bottom: 1%;
+      height: 150px;
+      width: 150px;
+    }
+
+    .title{
+      position: absolute;
+      left: 23%;
+      font-size:70px;
+      top:1%;
+    }
+    .basketballplay{
+      position: absolute;
+      height:500px;
+      width: 900px;
+      top: 12%;
+    }
+    .Question_1{
+      position: absolute;
+      left: 30%;
+      top:45%;
+      font-size:50px;
+    }
+    input[type=text], select {
+      width: 100%;
+      height: 50%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+}
+    input[type=submit] {
+      width: 100%;
+      height: 50%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+}
+     .Question_2{
+      position: absolute;
+      left: 30%;
+      top:55%;
+      font-size:50px;
+    }
+    .submit {
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    left: 35%;
+    top:83%;
+    font-size: 30px;
+    font-family: 'Lexend Deca', sans-serif;
+    color: #000000
+}
+  
+  </style>
+  
+  
+  
+  
+</head>
+
+<body>
+    <!-- You may change the dimensions of this canvas -->
+    <div class = "title">
+      <p>
+        Video Submission
+      </p>
+  </div>
+  
+  <img class= "basketballplay" src = "{% static 'draw/preference/assets/basketballplay.png'%}">
+    
+  <div class = "Question_1">
+    <form action="/action_page.php">
+        <label for="fname">Who is in this video?</label>
+      <br>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+  </div>
+    
+   <div class = "Question_2">
+    <form action="/action_page.php">
+        <label for="fname">Area of Focus</label>
+      <br>
+    <input type="text" id="fname" name="firstname" placeholder="Shooting/Blocking..">
+  </div>
+     
+     <button type="button"  class = "submit" onclick="alert('Your submission is recorded')">SUBMIT</button>
+
+  
+  
+  
+  
+  
+    <img class= "Personal_icon" src = "{% static 'draw/preference/assets/Personal_icon.svg'%}">
+    <img class= "Camera_icon" src = "{% static 'draw/preference/assets/Camera.svg'%}">
+    <a id = "Home"><img class= "Home_icon" src = "{% static 'draw/preference/assets/Home.svg'%}"></a>
+         
+          
+    
+    
+    
+ 
+      
+  
+</body>
+  <script>
+    $('#Home').click(function(){
+  console.log("Home clicked");
+  document.getElementById("Home").style.color="#ffff88";
+});
+  
+  
+  </script>
+
+</html>
+

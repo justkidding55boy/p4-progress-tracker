@@ -1,0 +1,429 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script type="text/javascript" src="{% static 'draw/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+    <title>main_page</title>
+    
+  
+  
+  <style>
+    body {
+      background: #ffffff;
+      font-family: helvetica;
+      margin: 50px;
+  }
+    .Personal_icon {
+      position: absolute;
+      left: 80%;
+      right: 8.9%;
+      top: 90%;
+      bottom: 1%;
+      height: 150px;
+      width: 150px;
+
+    }
+    .Camera_icon{
+      position: absolute;
+      left: 43%;
+      right: 8.9%;
+      top: 90%;
+      bottom: 1%;
+      height: 150px;
+      width: 150px;
+    }
+    .Home_icon{
+      position: absolute;
+      left: 8%;
+      right: 8.9%;
+      top: 90%;
+      bottom: 1%;
+      height: 150px;
+      width: 150px;
+    }
+
+.first_row{
+position: absolute;
+right:0px;
+height: 102px;
+left: 0px;
+top:300px;
+padding-top: 200px;
+
+background: #FFFFFF;
+border: 0.4px solid #000000;
+box-sizing: border-box;
+display:flex;
+flex-direction:row;
+}
+
+.r1c1{
+  position: absolute;
+  left:96px;
+  top:25px;
+
+}
+
+.r1c2{
+  position: absolute;
+  left:600px;
+  top:20px;
+  font-size: 30px;
+
+}
+ .r1c3{
+      position: absolute;
+      left: 850px;
+      top:60px;
+    }
+
+.second_row{
+position: absolute;
+right:0px;
+height: 102px;
+left: 0px;
+top:500px;
+padding-top: 200px;
+
+background: #FFFFFF;
+border: 0.4px solid #000000;
+box-sizing: border-box;
+}
+
+.r2c1{
+  position: absolute;
+  left:100px;
+  top:25px;
+
+}
+
+.r2c2{
+  position: absolute;
+  left:600px;
+  top:20px;
+  font-size: 30px;
+}
+.r2c3{
+  position: absolute;
+  left:850px;
+  top:60px;
+}
+
+.third_row{
+position: absolute;
+right:0px;
+height: 102px;
+left: 0px;
+top:700px;
+padding-top: 200px;
+
+background: #FFFFFF;
+border: 0.4px solid #000000;
+box-sizing: border-box;
+}
+
+
+.r3c1{
+  position: absolute;
+  left:100px;
+  top:25px;
+
+}
+
+.r3c2{
+  position: absolute;
+  left:600px;
+  top:20px;
+  font-size: 30px;
+}
+ .r3c3{
+  position: absolute;
+  left:850px;
+  top:60px;
+}
+
+
+.bottom_row{
+position: absolute;
+right:0px;
+height: 102px;
+left: 0px;
+bottom:0px;
+padding-top: 200px;
+
+background: #FFFFFF;
+border: 0.4px solid #000000;
+box-sizing: border-box;
+box-shadow: 0px 0px 10px #444
+  
+  
+}
+.numberCircle {
+    width: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 32px;
+    border: 2px solid #666;
+    color: red;
+    border-color: red;
+}
+.numberCircle_2 {
+    width: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 32px;
+    border: 2px solid #666;
+}
+
+    .profile_image{
+      position: absolute;
+      left: 40%;
+      top: 1%;
+    }
+    .user_name{
+      position: absolute;
+      left: 35%;
+      top:10%;
+      font-size:50px;
+    }
+    .fourth_row{
+position: absolute;
+right:0px;
+height: 200px;
+left: 0px;
+top:1200px;
+padding-top: 300px;
+flex-flow: column;
+
+
+background: #FFFFFF;
+border: 0.4px solid #000000;
+box-sizing: border-box;
+font-size:48px;
+
+}
+
+.r4r1{
+  position: absolute;
+right:0px;
+left: 0px;
+top:0px;
+padding-top: 85px;
+background: #FFFFFF;
+border: 0.2px solid #000000;
+}
+
+.r4r1c1{
+  position: absolute;
+  left:100px;
+  top:6px;
+}
+
+
+
+
+.r4r1c2{
+  position: absolute;
+  left:750px;
+  top:6px;
+}
+
+
+
+.r4r2{
+  position: absolute;
+right:0px;
+left: 0px;
+top:85px;
+padding-top: 85px;
+background: #FFFFFF;
+border: 0.2px solid #000000;
+}
+
+.r4r2c1{
+  position: absolute;
+  left:100px;
+  top:6px;
+}
+
+
+.r4r2c2{
+  position: absolute;
+  left:750px;
+  top:6px;
+}
+.r4r3{
+  position: absolute;
+right:0px;
+left: 0px;
+top:170px;
+padding-top: 85px;
+background: #FFFFFF;
+border: 0.2px solid #000000;
+
+}
+
+.r4r3c1{
+  position: absolute;
+  left:100px;
+  top:6px;
+}
+
+
+
+
+.r4r3c2{
+  position: absolute;
+  left:750px;
+  top:6px;
+}
+    
+  
+  </style>
+  
+  
+  
+  
+</head>
+
+<body>
+    <!-- You may change the dimensions of this canvas -->
+  
+  
+  <div class = "profile_image"> <img src="https://i.pinimg.com/736x/60/d9/26/60d9269a5ada1ee5e2f5161d036209e5.jpg" 
+                                     height="200" width="200" style="border-radius: 50%; border-style: solid;"></div>
+  <div class = "user_name"><p>
+    @user_name
+  </p>
+  </div>
+    
+  
+  
+  <div class ="first_row">
+            
+            <div class="r1c1">
+              
+            <img class= "basketballplay" src = "{% static 'draw/preference/assets/basketballplay.png'%}">
+            </div>
+            <div class="r1c2">
+            <p>
+              Chris
+              <br>
+              Description
+              <br>
+              ___________
+              </p>
+            </div>
+          <div class = "r1c3">
+              <div class="numberCircle">1</div>
+            </div>
+          </div>
+     <div class ="second_row">
+      <div class="r2c1">
+              
+            <img class= "smallvideotag" src = "{% static 'draw/preference/assets/smallvideotag.png'%}">
+            </div>
+            <div class="r2c2">
+            <p>
+              Chris
+              <br>
+              Description
+              <br>
+              ___________
+              </p>
+            </div>
+            <div class = "r2c3">
+              <div class="numberCircle_2">0</div>
+            </div>
+    </div>
+      <div class ="third_row">
+            <div class="r3c1">
+              
+            <img class= "smallvideotag" src = "{% static 'draw/preference/assets/smallvideotag.png'%}">
+            </div>
+            <div class="r3c2">
+            <p>
+              Chris
+              <br>
+              Description
+              <br>
+              ___________
+              </p>
+            </div>
+            <div class = "r3c3">
+              <div class="numberCircle_2">0</div>
+            </div>
+    </div>
+          <div class ="bottom_row"></div>
+        </div>
+  
+  
+  
+  
+ <div class = "External">
+    <div id = "External" class ="fourth_row" style = "visibility:hidden">
+      <div class="r4r1">
+        <div class="r4r1c1">
+          Take Photo or Video
+        </div>
+        <div class="r4r1c2">
+          <img class= "littlecamera" src = "{% static 'draw/preference/assets/littlecamera.svg'%}">
+        </div>
+      </div>
+      
+      <div class="r4r2">
+        <div class="r4r2c1">
+          Photo Library
+        </div>
+        <div class="r4r2c2">
+          <img class= "photolibrary" src = "{% static 'draw/preference/assets/photolibrary.svg'%}">
+        </div>
+      </div>
+      
+      <div class="r4r3">
+        <div class="r4r3c1">
+          Browse
+        </div>
+        <div class="r4r3c2">
+          <img class= "browse" src = "{% static 'draw/preference/assets/browse.svg'%}">
+        </div>
+      </div>           
+    </div>      
+  </div>
+  
+  
+  
+  
+    <a id = "Home"><img class= "Home_icon" src = "{% static 'draw/preference/assets/Home.svg'%}"></a>
+    <a id = "Camera"><img class= "Camera_icon" src = "{% static 'draw/preference/assets/Camera.svg'%}"></a>
+    <a id = "Personal"><img class= "Personal_icon" src = "{% static 'draw/preference/assets/Personal_icon.svg'%}"></a>
+         
+          
+    
+    
+    
+ 
+      
+  
+</body>
+  <script>
+     var camera_check = 0;
+  $('#Camera').click(function(){
+  console.log("camera clicked");
+  if (camera_check == 0){
+    document.getElementById("External").style.visibility = "visible";
+    camera_check = 1;
+  }
+  else if (camera_check == 1){
+    document.getElementById("External").style.visibility = "hidden";
+    camera_check = 0;
+  }
+});
+  </script>
+
+</html>
+

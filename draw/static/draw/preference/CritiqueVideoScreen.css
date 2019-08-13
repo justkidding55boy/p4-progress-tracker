@@ -43,14 +43,9 @@ position: absolute;
 right:0px;
 height: 102px;
 left: 0px;
-top:300px;
+top:100px;
 padding-top: 200px;
 
-background: #FFFFFF;
-border: 0.4px solid #000000;
-box-sizing: border-box;
-display:flex;
-flex-direction:row;
 }
 
 .r1c1{
@@ -59,47 +54,40 @@ flex-direction:row;
   top:25px;
 
 }
-
-.r1c2{
-  position: absolute;
-  left:600px;
-  top:6px;
-
+.arrow{
+  height:80px;
+  width:80px;
 }
+
+
 
 .second_row{
 position: absolute;
 right:0px;
-height: 102px;
+height: 600px;
 left: 0px;
-top:500px;
+top:300px;
 padding-top: 200px;
-
-background: #FFFFFF;
-border: 0.4px solid #000000;
-box-sizing: border-box;
 }
 
 .r2c1{
   position: absolute;
-  left:100px;
-  top:25px;
+  left:200px;
+  top:0px;
 
 }
-
-.r2c2{
-  position: absolute;
-  left:600px;
-  top:6px;
-
+.squarebasketballplayer{
+  height:450px;
+  width:600px;
 }
+
 
 .third_row{
 position: absolute;
 right:0px;
-height: 102px;
+height: 200px;
 left: 0px;
-top:700px;
+top:800px;
 padding-top: 200px;
 
 background: #FFFFFF;
@@ -107,112 +95,39 @@ border: 0.4px solid #000000;
 box-sizing: border-box;
 }
 
-
 .r3c1{
   position: absolute;
   left:100px;
-  top:25px;
+  top:0px;
+  font-size:50px;
 
 }
 
-.r3c2{
-  position: absolute;
-  left:600px;
-  top:6px;
 
-}
 
 .fourth_row{
 position: absolute;
 right:0px;
 height: 200px;
 left: 0px;
-top:1200px;
+top:1000px;
 padding-top: 300px;
 flex-flow: column;
 
 
-background: #FFFFFF;
-border: 0.4px solid #000000;
-box-sizing: border-box;
-font-size:48px;
-
 }
 
-.r4r1{
-  position: absolute;
-right:0px;
-left: 0px;
-top:0px;
-padding-top: 85px;
-background: #FFFFFF;
-border: 0.2px solid #000000;
-}
-
-.r4r1c1{
+.r4c1{
   position: absolute;
   left:100px;
-  top:6px;
-}
-
-
-
-
-.r4r1c2{
-  position: absolute;
-  left:750px;
-  top:6px;
-}
-
-
-
-.r4r2{
-  position: absolute;
-right:0px;
-left: 0px;
-top:85px;
-padding-top: 85px;
-background: #FFFFFF;
-border: 0.2px solid #000000;
-}
-
-.r4r2c1{
-  position: absolute;
-  left:100px;
-  top:6px;
-}
-
-
-.r4r2c2{
-  position: absolute;
-  left:750px;
-  top:6px;
-}
-.r4r3{
-  position: absolute;
-right:0px;
-left: 0px;
-top:170px;
-padding-top: 85px;
-background: #FFFFFF;
-border: 0.2px solid #000000;
+  top:50px;
 
 }
-
-.r4r3c1{
-  position: absolute;
-  left:100px;
-  top:6px;
+.chris{
+  height:200px;
+  width:200px;
 }
 
-
-
-
-.r4r3c2{
-  position: absolute;
-  left:750px;
-  top:6px;
-}
 
 
 

@@ -10,7 +10,8 @@
     <script type="text/javascript" src="{% static 'draw/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'draw/vendor/paper/paper-full.min.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'draw/preference/index.css' %}">
-  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -24,25 +25,45 @@
     </div>
   </div> -->
   
-  <div class ="app-name">
-    <h1> Our app name</h1>
-  </div>
+<!--   <div class ="app-name">
+    <h1> </h1>
+  </div> -->
   
-  <button type="button"  class = "submit" onclick="alert('Your submission is recorded')">Submit</button>
-  <a id = "pen"><img src = "http://simpleicon.com/wp-content/uploads/pencil.png" class = "icon pen-icon"></a>
- <!-- <a id = "erase" on><img src = "https://cdns.iconmonstr.com/wp-content/assets/preview/2018/240/iconmonstr-eraser-2.png" class = "icon eraser-icon"></a> 
--->
-  <a onclick = "clear_c()"><img src = "https://cdn.onlinewebfonts.com/svg/img_185728.png" class = "icon clear-icon"></a>
-  <img src = "http://simpleicon.com/wp-content/uploads/undo-1.png" class = "icon undo-icon">
-  <!--<img src = "http://simpleicon.com/wp-content/uploads/redo-1.png" class = "icon redo-icon"> -->
-  <img src = "http://cdn.onlinewebfonts.com/svg/img_464922.png" class = "icon blurry-icon">
-  <a style="backgrouhd: yellow;" id = "path"><img src = "https://static.thenounproject.com/png/19124-200.png" class = "icon path-icon"></a>
-  <img src = "http://simpleicon.com/wp-content/uploads/mic-1.png" class = "icon audio-icon">
-  <canvas id="myCanvas" height="245" width="725" style="border:3px solid #000000"></canvas>
+  <button type="button"  class = "submit" onclick="alert('Your submission is recorded')">SUBMIT</button>
+  
+  <a id = "pen" class = "fas fa-pencil-alt fa-3x"></a>
+  <a id = "clear" onclick = "clear_c()" class = "fas fa-broom fa-3x"></a>
+  <a id = "undo" class = "fas fa-undo fa-3x"></a>
+  <a id = "highlight" class = "fas fa-highlighter fa-3x"></a>
+  <a id = "path" class = "fas fa-braille fa-3x"></a>
+<!--   <a id = "audio-file" class = "fas fa-play fa-3x"></a> -->
+  <a id = "audio" class = "fas fa-microphone fa-3x audio-icon">
+  <a id = "stop" class="fas fa-stop fa-3x"></a>
+  </a>
+  
 
+<!--   <img src = "http://cdn.onlinewebfonts.com/svg/img_464922.png" class = "icon blurry-icon"> -->
+<!--   <a style="backgrouhd: yellow;" id = "path"><img src = "https://static.thenounproject.com/png/19124-200.png" class = "icon path-icon"></a> -->
+<!--   <img src = "http://simpleicon.com/wp-content/uploads/mic-1.png" class = "icon audio-icon"> -->
+  <canvas id="myCanvas" height="245" width="725" style="border:3px solid #000000; z-index:  10;"></canvas>
+
+    <div class ="recording" style="display: none; z-index:  20;">
+      
+     <div id="controls">
+
+  	 <button id="pauseButton" style="display: none;" disabled>Pause</button>
+    </div>
+    <div id="formats">Format: start recording to see sample rate</div>
+  	<h3>Recordings</h3>
+  </div>
+    	<ol id="recordingsList"></ol>
+
+  
+  
 </body>
-
+    <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
     <script type="text/javascript" src="{% static 'draw/preference/index.js' %}"></script>
+    <script type="text/javascript" src="{% static 'draw/preference/app.js' %}"></script>
 <!--     <script type="text/javascript" src="{% static 'draw/preference/canvas.js' %}"></script> -->
 
 </html>
