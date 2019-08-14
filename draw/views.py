@@ -24,3 +24,6 @@ def Video_Submission_Page(request):
   
 def CritiqueVideoScreen(request):
     return render(request, 'draw/CritiqueVideoScreen.html', {})
+  
+def CommentScreen(request):
+    return render(request, 'draw/CommentScreen.html', {})

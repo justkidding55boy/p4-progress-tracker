@@ -10,6 +10,7 @@ urlpatterns = [
     path('Personal_Page', views.Personal_Page, name='Personal_Page'),
     path('Video_Submission_Page', views.Video_Submission_Page, name='Video_Submission_Page'),
     path('CritiqueVideoScreen', views.CritiqueVideoScreen, name='CritiqueVideoScreen'),
+    path('CommentScreen', views.CommentScreen, name='CommentScreen'),
     url(r'^$', views.index, name='index'),
     url(r'^(?P<room_name>[^/]+)/$', views.room, name='room'),
 ]

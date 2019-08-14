@@ -4,41 +4,64 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <script type="text/javascript" src="{% static 'draw/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
-    <title>main_page</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'draw/vendor/bootstrap/css/bootstrap.min.css' %}">
+  
+  <script type="text/javascript" src="{% static 'draw/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Chewy&display=swap" rel="stylesheet">
+
+  <title>personal_account</title>
     
   
   
   <style>
-    body {
-      background: #ffffff;
-      font-family: helvetica;
-      margin: 50px;
+   
+      body {
+      font-family: 'Lexend Deca', sans-serif;
+
+background-color: #e3e3e3;
+
+        
   }
+/*         #mid {
+      background-color:white;
+      height: 380px;
+          right: -2px;
+      width:100%;
+      margin-top: 0px;
+    } */
     .Personal_icon {
+        color: #FFFFFF;
+
       position: absolute;
-      left: 80%;
+      left: 84%;
       right: 8.9%;
-      top: 90%;
+      top: 93%;
       bottom: 1%;
       height: 150px;
       width: 150px;
 
     }
     .Camera_icon{
+        color: #B5D3E7;
+
       position: absolute;
-      left: 43%;
+      left: 48%;
       right: 8.9%;
-      top: 90%;
+      top: 93%;
       bottom: 1%;
       height: 150px;
       width: 150px;
     }
     .Home_icon{
+        color: #B5D3E7;
+
       position: absolute;
-      left: 8%;
+      left: 12%;
       right: 8.9%;
-      top: 90%;
+      top: 93%;
       bottom: 1%;
       height: 150px;
       width: 150px;
@@ -47,13 +70,14 @@
 .first_row{
 position: absolute;
 right:0px;
-height: 102px;
+height: 350px;
 left: 0px;
-top:300px;
-padding-top: 200px;
+top:400px;
+  margin-left:30px;
+margin-right:30px;
 
 background: #FFFFFF;
-border: 0.4px solid #000000;
+border: none;
 box-sizing: border-box;
 display:flex;
 flex-direction:row;
@@ -75,20 +99,21 @@ flex-direction:row;
 }
  .r1c3{
       position: absolute;
-      left: 850px;
-      top:60px;
+      left:820px;
+  top:30px;
     }
 
 .second_row{
 position: absolute;
 right:0px;
-height: 102px;
+height: 350px;
 left: 0px;
-top:500px;
-padding-top: 200px;
+top:785px;
+margin-left:30px;
+margin-right:30px;
 
 background: #FFFFFF;
-border: 0.4px solid #000000;
+border: none;
 box-sizing: border-box;
 }
 
@@ -107,20 +132,21 @@ box-sizing: border-box;
 }
 .r2c3{
   position: absolute;
-  left:850px;
-  top:60px;
+  left:820px;
+  top:30px;
 }
 
 .third_row{
 position: absolute;
 right:0px;
-height: 102px;
+height: 350px;
 left: 0px;
-top:700px;
+top:1170px;
 padding-top: 200px;
-
+margin-left:30px;
+margin-right:30px;
 background: #FFFFFF;
-border: 0.4px solid #000000;
+border: none;
 box-sizing: border-box;
 }
 
@@ -140,54 +166,58 @@ box-sizing: border-box;
 }
  .r3c3{
   position: absolute;
-  left:850px;
-  top:60px;
+  left:820px;
+  top:30px;
 }
 
 
 .bottom_row{
 position: absolute;
-right:0px;
-height: 102px;
+right:-2px;
+top:1520px;
+height: 60px;
 left: 0px;
-bottom:0px;
+bottom:-2px;
 padding-top: 200px;
 
-background: #FFFFFF;
-border: 0.4px solid #000000;
+background: #121212;
 box-sizing: border-box;
-box-shadow: 0px 0px 10px #444
   
   
 }
 .numberCircle {
-    width: 80px;
-    line-height: 80px;
+    width: 60px;
+    line-height: 50px;
     border-radius: 50%;
     text-align: center;
     font-size: 32px;
-    border: 2px solid #666;
+    border: 5px solid #666;
     color: red;
     border-color: red;
+      font-family: 'Lexend Deca', sans-serif;
 }
 .numberCircle_2 {
-    width: 80px;
-    line-height: 80px;
-    border-radius: 50%;
+    width: 60px;
+    line-height: 50px;
+    border-radius: 100%;
     text-align: center;
     font-size: 32px;
-    border: 2px solid #666;
+    border: 5px solid #666;
+        font-family: 'Lexend Deca', sans-serif;
+
 }
 
     .profile_image{
       position: absolute;
-      left: 40%;
-      top: 1%;
+      left: 10%;
+      top: 6%;
+      border: 10px;
     }
     .user_name{
       position: absolute;
-      left: 35%;
-      top:10%;
+color:black ;     
+      left: 38%;
+      top:6%;
       font-size:50px;
     }
     .fourth_row{
@@ -276,13 +306,97 @@ border: 0.2px solid #000000;
 
 
 
+
+#firstid, #secid, #thirdid{
+  color: #003366;
+font-family: 'Chewy', cursive;
+  font-size: 30px;
+  margin-top: 70px;
+  margin-left: -100px;
+}
+
+#desc{
+  color: black;
+font-family: 'roboto', sans-serif;
+  font-weight:bold;
+  font-size: 18px;
+/*   margin-top: 30px; */
+  margin-left: -130px;
+}
+#stuff{
+  color: black;
+font-family: 'roboto', sans-serif;
+  font-size: 15px;
+/*   margin-top: 30px; */
+  margin-left: 40px;
+}
+
+
 .r4r3c2{
   position: absolute;
   left:750px;
   top:6px;
 }
+
     
-  
+    .handle{
+              font-family: 'Lexend Deca', sans-serif;
+font-size:22px;
+      position: absolute;
+      top: 135px;
+      left: 615px;
+      color: black;
+    }
+    
+    #one {
+      background: #173F5F;
+      position: absolute;
+      top: 220px;
+      left: 360px;
+      height: 40px;
+      width: 150px;
+      vertical-align: middle;
+      text-align:center;
+      color: white;
+     font-size: 23px;
+      
+      
+    }
+    #two{
+      background: #20639B;
+      position: absolute;
+      top: 220px;
+      left: 520px;
+      height: 40px;
+      width: 150px;
+      text-align:center;
+            color: white;
+font-size: 22px;
+    }
+    #three {
+      background: #3CAEA3;
+      position: absolute;
+      top: 220px;
+      left: 680px;
+      height: 40px;
+      width: 150px;
+      text-align:center;
+            color: white;
+font-size: 23px;
+    }
+    
+    .basketballplay{
+  position: absolute;
+  top: 50px;
+}
+.smallvideotag{
+  position: absolute;
+  top: 50px;
+}
+.smallvideotag2{
+  position: absolute;
+  top: 50px;
+}
   </style>
   
   
@@ -292,117 +406,125 @@ border: 0.2px solid #000000;
 
 <body>
     <!-- You may change the dimensions of this canvas -->
-  
+  <div id="mid">
+  </div>
   
   <div class = "profile_image"> <img src="https://i.pinimg.com/736x/60/d9/26/60d9269a5ada1ee5e2f5161d036209e5.jpg" 
                                      height="200" width="200" style="border-radius: 50%; border-style: solid;"></div>
   <div class = "user_name"><p>
-    @user_name
+    Chris Chi
+    
   </p>
   </div>
-    
+  <div class = "handle">
+    @chrischi
+  </div>
   
+  <div id = "one" class="rounded-left">
+    <p>
+      15 Likes
+    </p>
+  </div>
+  <div id = "two" class="rounded-0">
+    <p>
+      24 Comments
+
+    </p>
+  </div>
+   <div id = "three"class="rounded-right">
+     <p>
+       8 Videos
+     </p>
+  </div>
+    
   
   <div class ="first_row">
             
             <div class="r1c1">
               
-            <img class= "basketballplay" src = "{% static 'draw/preference/assets/basketballplay.png'%}">
+              <a href = "http://p4-progress-tracker-eijikudo883404.codeanyapp.com/draw/CritiqueVideoScreen"><img class= "basketballplay" src = "{% static 'draw/preference/assets/Basketball_3.png'%}" height = 200px; width = 300px></a>
             </div>
             <div class="r1c2">
-            <p>
-              Chris
-              <br>
-              Description
-              <br>
-              ___________
-              </p>
+            <p id = "firstid">
+              @chrischu
+              
+             </p>
+              <ul id="desc">description:
+                <li id="stuff">played basketball for 2 years</li>
+                <li id="stuff">need help on blocking and defense</li>
+                <li id="stuff">not used to playing in teams</li>
+              </ul>
+              
+     
             </div>
-          <div class = "r1c3">
-              <div class="numberCircle">1</div>
+    <div class = "r1c3">
+              <div class="numberCircle">3</div>
             </div>
           </div>
-     <div class ="second_row">
+          
+    
+    
+    
+    <div class ="second_row">
+
       <div class="r2c1">
               
-            <img class= "smallvideotag" src = "{% static 'draw/preference/assets/smallvideotag.png'%}">
+            <img class= "smallvideotag" src = "{% static 'draw/preference/assets/Basketball_1.jpg'%}" height = 200px; width = 300px>
             </div>
             <div class="r2c2">
-            <p>
-              Chris
-              <br>
-              Description
-              <br>
-              ___________
-              </p>
+              <p id = "secid">
+              @chrischi
+             </p>
+              <ul id="desc">description:
+                <li id="stuff">play basketball with siblings in my back yard</li>
+                <li id="stuff">working on how to do a lay up</li>
+                <li id="stuff">confused about the footwork</li>
+              </ul>
+            
             </div>
-            <div class = "r2c3">
-              <div class="numberCircle_2">0</div>
+      <div class = "r2c3">
+              <div class="numberCircle_2">2</div>
             </div>
     </div>
-      <div class ="third_row">
+          <div class ="third_row">
+
             <div class="r3c1">
               
-            <img class= "smallvideotag" src = "{% static 'draw/preference/assets/smallvideotag.png'%}">
+            <img class= "smallvideotag2" src = "{% static 'draw/preference/assets/Basketball_2.jpg'%}" height = 200px; width = 300px>
             </div>
             <div class="r3c2">
-            <p>
-              Chris
-              <br>
-              Description
-              <br>
-              ___________
-              </p>
+            <p id = "thirdid">
+              @chrischi
+             </p>
+              <ul id="desc">description:
+                <li id="stuff">stays afterschool to play basketball in the gym</li>
+                <li id="stuff">need work on shooting 3 pointers</li>
+                <li id="stuff">goal is to minimize misses</li>
+              </ul>
             </div>
             <div class = "r3c3">
               <div class="numberCircle_2">0</div>
             </div>
     </div>
+  
+  
           <div class ="bottom_row"></div>
         </div>
   
   
   
   
- <div class = "External">
-    <div id = "External" class ="fourth_row" style = "visibility:hidden">
-      <div class="r4r1">
-        <div class="r4r1c1">
-          Take Photo or Video
-        </div>
-        <div class="r4r1c2">
-          <img class= "littlecamera" src = "{% static 'draw/preference/assets/littlecamera.svg'%}">
-        </div>
-      </div>
-      
-      <div class="r4r2">
-        <div class="r4r2c1">
-          Photo Library
-        </div>
-        <div class="r4r2c2">
-          <img class= "photolibrary" src = "{% static 'draw/preference/assets/photolibrary.svg'%}">
-        </div>
-      </div>
-      
-      <div class="r4r3">
-        <div class="r4r3c1">
-          Browse
-        </div>
-        <div class="r4r3c2">
-          <img class= "browse" src = "{% static 'draw/preference/assets/browse.svg'%}">
-        </div>
-      </div>           
-    </div>      
-  </div>
+
   
   
   
+  <a href = "http://p4-progress-tracker-eijikudo883404.codeanyapp.com/draw/main_page"><i id = "Home" class="fas fa-home fa-5x Home_icon"></i></a>
+              <label id = "Camera" for = "inputPicture" class="fas fa-camera fa-5x Camera_icon">
+              </label>
+              <input type="file" id = "inputPicture" style="display: none;">
+              <i id = "Camera" ></i>
+  <a href = "http://p4-progress-tracker-eijikudo883404.codeanyapp.com/draw/Personal_Page"><i id = "Personal" class="fas fa-user fa-5x Personal_icon"></i></a>
   
-    <a id = "Home"><img class= "Home_icon" src = "{% static 'draw/preference/assets/Home.svg'%}"></a>
-    <a id = "Camera"><img class= "Camera_icon" src = "{% static 'draw/preference/assets/Camera.svg'%}"></a>
-    <a id = "Personal"><img class= "Personal_icon" src = "{% static 'draw/preference/assets/Personal_icon.svg'%}"></a>
-         
-          
     
     
     
@@ -411,18 +533,7 @@ border: 0.2px solid #000000;
   
 </body>
   <script>
-     var camera_check = 0;
-  $('#Camera').click(function(){
-  console.log("camera clicked");
-  if (camera_check == 0){
-    document.getElementById("External").style.visibility = "visible";
-    camera_check = 1;
-  }
-  else if (camera_check == 1){
-    document.getElementById("External").style.visibility = "hidden";
-    camera_check = 0;
-  }
-});
+
   </script>
 
 </html>

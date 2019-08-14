@@ -10,7 +10,12 @@ body {background-color:#121212;}
     font-size: 20px;
     line-height: 23px;
 }
-
+#back {
+  color: white;
+  position: absolute;
+  top: 5px;
+  left: 50px;
+}
 #myCanvas {
     position: absolute;
     width: 900px;
@@ -18,6 +23,13 @@ body {background-color:#121212;}
     left: 40px;
     top: 50px;
   background-color: #FFFFFF;
+}
+.image{
+   position: absolute;
+    width: 900px;
+    height: 400px;
+    left: 40px;
+    top: 50px;
 }
 
 .submit {

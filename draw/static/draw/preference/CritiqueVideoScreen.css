@@ -90,9 +90,6 @@ left: 0px;
 top:800px;
 padding-top: 200px;
 
-background: #FFFFFF;
-border: 0.4px solid #000000;
-box-sizing: border-box;
 }
 
 .r3c1{
@@ -126,6 +123,13 @@ flex-flow: column;
 .chris{
   height:200px;
   width:200px;
+}
+
+.r4c2{
+  position: absolute;
+  left:500px;
+  top:50px;
+
 }
 
 
@@ -197,6 +201,8 @@ box-shadow: 0px 0px 10px #444
       width: 150px;
 
     }
+
+
 
  
       

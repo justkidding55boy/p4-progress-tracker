@@ -4,51 +4,75 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <script type="text/javascript" src="{% static 'draw/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
-    <title>Video_Submission_Page</title>
+          <link rel="stylesheet" type="text/css" href="{% static 'draw/vendor/bootstrap/css/bootstrap.min.css' %}">
+
+  <script type="text/javascript" src="{% static 'draw/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Chewy&display=swap" rel="stylesheet">
+
+  <title>video-submission</title>
     
   
   
   <style>
     body {
-      background: #ffffff;
+      background: #121212;
       font-family: helvetica;
       margin: 50px;
   }
+    #mid {
+      background-color:#FFFFFF;
+      height: 1350px;
+      width:100%;
+      margin-top: 200px;
+    }
     .Personal_icon {
+        color: #B5D3E7;
+
       position: absolute;
-      left: 80%;
+      left: 82%;
       right: 8.9%;
-      top: 90%;
-      bottom: 1%;
+      top: 92%;
+      bottom: 0%;
       height: 150px;
       width: 150px;
 
     }
     .Camera_icon{
+        color: #FFFFFF;
+
       position: absolute;
-      left: 43%;
+      
+      left: 45%;
       right: 8.9%;
-      top: 90%;
-      bottom: 1%;
-      height: 150px;
-      width: 150px;
-    }
-    .Home_icon{
-      position: absolute;
-      left: 8%;
-      right: 8.9%;
-      top: 90%;
-      bottom: 1%;
+      top: 92%;
+      bottom: 0%;
       height: 150px;
       width: 150px;
     }
 
+    .Home_icon{
+        color: #B5D3E7;
+
+      position: absolute;
+      left: 10%;
+      right: 8.9%;
+      top: 92%;
+      bottom: 0%;
+      height: 150px;
+      width: 150px;
+    }
+    
     .title{
       position: absolute;
-      left: 23%;
-      font-size:70px;
-      top:1%;
+      color: #B5D3E7;
+        font-family: 'Chewy', cursive;
+
+      left: 35%;
+      font-size:80px;
+      top:3%;
     }
     .basketballplay{
       position: absolute;
@@ -57,10 +81,11 @@
       top: 12%;
     }
     .Question_1{
+      font-family: 'Lexend Deca', sans-serif;
       position: absolute;
       left: 30%;
-      top:45%;
-      font-size:50px;
+      top:53%;
+      font-size:40px;
     }
     input[type=text], select {
       width: 100%;
@@ -84,22 +109,43 @@
       cursor: pointer;
 }
      .Question_2{
+       font-family: 'Lexend Deca', sans-serif;
       position: absolute;
       left: 30%;
-      top:55%;
-      font-size:50px;
+      top:63%;
+      font-size:40px;
     }
     .submit {
     position: absolute;
-    width: 300px;
-    height: 100px;
-    left: 35%;
-    top:83%;
+    width: 200px;
+    height: 80px;
+    left: 38%;
+    top:78%;
     font-size: 30px;
     font-family: 'Lexend Deca', sans-serif;
     color: #000000
 }
-  
+    #fname{
+      font-size:15px;
+      width: 400px;
+    }
+    
+    #check {
+      color: #9c1006;
+      position: absolute;
+      top: 770px;
+      left: 40%;
+    }
+    #comp{
+      color: #9c1006;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 25px;
+            position: absolute;
+
+      top: 765px;
+      left: 44%;
+    }
+    
   </style>
   
   
@@ -109,44 +155,53 @@
 
 <body>
     <!-- You may change the dimensions of this canvas -->
+  
     <div class = "title">
       <p>
-        Video Submission
+        New Video
       </p>
   </div>
   
+<div id="mid">
+  </div>
+  
   <img class= "basketballplay" src = "{% static 'draw/preference/assets/basketballplay.png'%}">
-    
+  <i id = "check" class="fas fa-check-circle fa-2x"></i> 
+  <p id="comp">
+      upload complete 
+  </p>
   <div class = "Question_1">
     <form action="/action_page.php">
         <label for="fname">Who is in this video?</label>
       <br>
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+    <input type="text" id="fname" name="firstname" placeholder="person 1, person 2, ...">
   </div>
     
    <div class = "Question_2">
     <form action="/action_page.php">
         <label for="fname">Area of Focus</label>
       <br>
-    <input type="text" id="fname" name="firstname" placeholder="Shooting/Blocking..">
+    <input type="text" id="fname" name="firstname" placeholder="eg. shooting, blocking, defense">
   </div>
      
-     <button type="button"  class = "submit" onclick="alert('Your submission is recorded')">SUBMIT</button>
 
+  <button type="button" class="btn btn-light submit" onclick="alert('Your submission is recorded')">submit</button>
   
   
-  
-  
-  
-    <img class= "Personal_icon" src = "{% static 'draw/preference/assets/Personal_icon.svg'%}">
-    <img class= "Camera_icon" src = "{% static 'draw/preference/assets/Camera.svg'%}">
-    <a id = "Home"><img class= "Home_icon" src = "{% static 'draw/preference/assets/Home.svg'%}"></a>
-         
-          
-    
-    
-    
- 
+    <div class ="bottom_row">
+            <div class="rlc1">
+              <a href = "http://p4-progress-tracker-eijikudo883404.codeanyapp.com/draw/main_page"><i id = "Home" class="fas fa-home fa-5x Home_icon" style = "top:1560px;"></i></a>
+              </div>
+            <div class ="rlc2">
+              <label id = "Camera" for = "inputPicture" class="fas fa-camera fa-5x Camera_icon " style = "top:1560px;">
+              </label>
+              <input type="file" id = "inputPicture" style="display: none;">
+              <i id = "Camera" ></i>
+            </div>
+            <div class ="rlc3">
+              <a href = "http://p4-progress-tracker-eijikudo883404.codeanyapp.com/draw/Personal_Page"><i id = "Personal" class="fas fa-user fa-5x Personal_icon" style = "top:1560px;"></i></a>
+           </div>
+        </div>
       
   
 </body>

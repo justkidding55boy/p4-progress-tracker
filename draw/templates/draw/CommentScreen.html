@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>CritiqueVideoScreen</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'draw/preference/CommentScreen.css' %}">
+  
+</head>
+
+<body>
+    <!-- You may change the dimensions of this canvas -->
+    <div class="display_size" style="text-align: center; font-size: 5vw;"></div>
+    
+<!--   class mainpage set the vertical layout -->
+  <div class="vertical_box">
+    
+          
+    
+          <div class ="first_row">
+            <div class = "r1c1">
+              <img class= "arrow" src = "{% static 'draw/preference/assets/arrow.svg'%}">
+            </div>
+          </div>
+          
+        <div class ="second_row">
+            <div class = "r2c1">
+              <img class= "Commentedphoto" src = "{% static 'draw/preference/assets/Commentedphoto.png'%}">
+            </div>
+          </div>
+    
+    
+   
+    
+          <div class ="third_row">
+            <div class= "r3c1">
+              <p class='comment'>
+              Comments:
+            </p>
+              <br>
+              <p>
+                ___________________________
+                <br>
+                ___________________________
+                <br>
+                ___________________________
+              </p>
+            </div>         
+    </div>
+  
+    
+  
+  
+  
+  
+    <div class ="bottom_row">
+            <div class="rlc1">
+              <a id = "Home"><img class= "Home_icon" src = "{% static 'draw/preference/assets/Home.svg'%}"></a>
+              </div>
+            <div class ="rlc2">
+              <img class= "Camera_icon" src = "{% static 'draw/preference/assets/Camera.svg'%}">
+            </div>
+            <div class ="rlc3">
+              <img class= "Personal_icon" src = "{% static 'draw/preference/assets/Personal_icon.svg'%}">
+    </div>
+        </div>
+      
+  
+</body>
+
+</html>
+

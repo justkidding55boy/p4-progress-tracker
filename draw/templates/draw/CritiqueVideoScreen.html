@@ -11,7 +11,8 @@
 
 <body>
     <!-- You may change the dimensions of this canvas -->
-    <div class="display_size" style="text-align: center; font-size: 5vw;"></div>
+    
+  <div class="display_size" style="text-align: center; font-size: 5vw;"></div>
     
 <!--   class mainpage set the vertical layout -->
   <div class="vertical_box">
@@ -54,15 +55,13 @@
   
   
     <div class ="bottom_row">
-            <div class="rlc1">
-              <a id = "Home"><img class= "Home_icon" src = "{% static 'draw/preference/assets/Home.svg'%}"></a>
-              </div>
-            <div class ="rlc2">
-              <img class= "Camera_icon" src = "{% static 'draw/preference/assets/Camera.svg'%}">
-            </div>
-            <div class ="rlc3">
-              <img class= "Personal_icon" src = "{% static 'draw/preference/assets/Personal_icon.svg'%}">
-    </div>
+           <a href = "http://p4-progress-tracker-eijikudo883404.codeanyapp.com/draw/main_page"><i id = "Home" class="fas fa-home fa-5x Home_icon"></i></a>
+              <label id = "Camera" for = "inputPicture" class="fas fa-camera fa-5x Camera_icon">
+              </label>
+              <input type="file" id = "inputPicture" style="display: none;">
+              <i id = "Camera" ></i>
+  <a href = "http://p4-progress-tracker-eijikudo883404.codeanyapp.com/draw/Personal_Page"><i id = "Personal" class="fas fa-user fa-5x Personal_icon"></i></a>
+  
         </div>
       
   
