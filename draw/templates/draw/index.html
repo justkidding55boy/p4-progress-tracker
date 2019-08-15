@@ -24,13 +24,14 @@
        send 
     </div>
   </div> -->
-  <img id = "basketball" src = "{% static 'draw/preference/assets/Basketball_7.jpg'%}" height="400" width="900" style = "visibility: hidden">
+ 
 <!--   <div class ="app-name">
     <h1> </h1>
   </div> -->
-  <i id = "back" class="fas fa-long-arrow-alt-left fa-3x"></i>
-  <button type="button"  class = "submit" onclick="alert('Your submission is recorded')">SUBMIT</button>
-  
+  <a href = "http://p4-progress-tracker-eijikudo883404.codeanyapp.com/draw/main_page"><i id = "back" class="fas fa-long-arrow-alt-left fa-3x"></i></a>
+  <div class = "submit">
+    SUBMIT
+  </div>
   <a id = "pen" class = "fas fa-pencil-alt fa-3x"></a>
   <a id = "clear" onclick = "clear_c()" class = "fas fa-broom fa-3x"></a>
   <a id = "undo" class = "fas fa-undo fa-3x"></a>
@@ -66,12 +67,7 @@
     <script type="text/javascript" src="{% static 'draw/preference/app.js' %}"></script>
 <!--     <script type="text/javascript" src="{% static 'draw/preference/canvas.js' %}"></script> -->
   <script>
-  window.onload = function() {
-  var c = document.getElementById("myCanvas");
-  var ctx = c.getContext("2d");
-  var img = document.getElementById("basketball");
-  ctx.drawImage(img, 0, 0);
-}
+ 
   </script>
 
 </html>

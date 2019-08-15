@@ -39,7 +39,7 @@ var draw = function() {
       //pen
       console.log("pen function");
       myPath = new paper.Path({
-        strokeColor: 'black',
+        strokeColor: 'red',
         strokeWidth: 2
       });
 

@@ -22,7 +22,8 @@ body {background-color:#121212;}
     height: 400px;
     left: 40px;
     top: 50px;
-  background-color: #FFFFFF;
+    background-image: url(/static/draw/preference/assets/Basketball_3.png);
+    background-size: 900px 400px;
 }
 .image{
    position: absolute;
