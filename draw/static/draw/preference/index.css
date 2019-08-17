@@ -13,7 +13,8 @@ body {background-color:#121212;}
 #back {
   color: white;
   position: absolute;
-  top: 5px;
+  top-margin:12px;
+  top: 100px;
   left: 50px;
 }
 #myCanvas {
@@ -38,7 +39,7 @@ body {background-color:#121212;}
     width: 150px;
     height: 40px;
     left: 810px;
-    top: 10px;
+    top: 12px;
   font-size: 20px;
   font-family: 'Lexend Deca', sans-serif;
   color: #FFFFFF
@@ -49,7 +50,7 @@ body {background-color:#121212;}
 #undo {
     position: absolute;
     left: 60px;
-    top: 480px;
+    top: 460px;
     color: #B5D3E7;
 }
 
@@ -57,7 +58,7 @@ body {background-color:#121212;}
 #clear {
     position: absolute;
     left: 380px;
-    top: 480px;
+    top: 460px;
       color: #B5D3E7;
 
 }
@@ -65,7 +66,7 @@ body {background-color:#121212;}
 #pen {
     position: absolute;
     left: 140px;
-    top: 480px;
+    top: 460px;
       color: #B5D3E7;
 
 }
@@ -80,14 +81,14 @@ body {background-color:#121212;}
 #highlight {
     position: absolute;
     left: 220px;
-    top: 480px;    
+    top: 460px;
     color: #B5D3E7;
 }
 
 #path {
     position: absolute;
     left: 300px;
-    top: 480px;
+    top: 460px;
     color: #B5D3E7;
 
 }
@@ -103,13 +104,13 @@ body {background-color:#121212;}
 #recordingsList {
   position: absolute;
   left: 500px;
-  top: 480px;
+  top: 475px;
 }
 
 #audio {
     position: absolute;
     left: 890px;
-    top: 480px;
+    top: 460px;
     color: #B5D3E7;
 }
 
@@ -119,4 +120,14 @@ body {background-color:#121212;}
     top: 480px;
     color: #B5D3E7;
   display: none;
+}
+
+
+.submit{
+  position: absolute;
+  top:23px;
+}
+#back{
+  position: absolute;
+  top: 20px;
 }
